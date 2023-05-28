@@ -1,0 +1,62 @@
+<?xml version ="1.0" ?>
+<!DOCTYPE liste [
+<!ELEMENT photo EMPTY >
+<!ELEMENT CV EMPTY >
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT prénom (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT tél (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT étudiant (nom,prénom,age,tél*,email,photo,(description|CV)?)>
+<!ELEMENT liste (étudiant+)>
+
+<!ATTLIST liste année CDATA #FIXED "2021" >
+<!ATTLIST étudiant code ID #REQUIRED>
+<!ATTLIST tél type (fixe|portable) "portable" >
+<!ATTLIST photo source CDATA #REQUIRED
+largeur CDATA #IMPLIED
+hauteur CDATA #IMPLIED>
+<!ATTLIST CV file CDATA #REQUIRED >
+]>
+<liste année = "2021">
+	<étudiant  code="E1">
+		<nom>Moujtahid</nom>
+		<prénom>Moujidd</prénom>
+		<age>25</age>
+		<email>moujtahid@fsdmfes.ac.ma</email>
+		<photo source="moujtahid.jpg" hauteur="80" largeur="80" />
+		<description>Moujtahid Moujidd est un étudiant brillant. Il est majeur de sa promotion. Après avoir obtenu son bac sciences Math avec la mention très bien. Il s'est inscrit à la faculté des Science Dhar Mehraz. Après avoir obtenu la licence, il a été accèpté en DESS GI</description>
+	</étudiant>
+	<étudiant code="E2">
+		<nom>Kaddouri</nom>
+		<prénom>Kaddour</prénom>
+		<age>26</age>
+		
+		<tél type="portable">070333333</tél>
+		<email>kaddouri@fsdmfes.ac.ma</email>
+		<photo source="kaddouri.jpg"></photo>
+		<description>Kaddouri Kaddour a suivi toutes ses années de la licence au sein de la FSDM. Ses compétences remarquables lui ont permis de suivre ses études supérieures spécilisées</description>
+	</étudiant>
+	<étudiant code="E3">
+		<nom>Jallouli</nom>
+		<prénom>Jalloul</prénom>
+		<age>27</age>
+		<tél type = "fixe">035000002</tél>
+		<tél type ="portable">067000002</tél>
+		<email>jallouli@hotmail.com</email>
+		<photo source="jallouli.jpg"></photo>
+		<CV file = "jallouli.doc" />
+		</étudiant>
+	<étudiant code="E4">
+		<nom>Kaslani</nom>
+		<prénom>Kassoul</prénom>
+		<age>35</age>
+		<tél type = "fixe">035444444</tél>
+		<tél type = "portable">063444444</tél>
+		<tél type = "portable">067444444</tél>
+		<email>kaslani2007@caramail.com</email>
+		<photo source="kaslani.jpg"></photo>
+		<description>Kaslani Kassoul est l'étudiant le plus ancien de la fac des sciences. Il a changé plusieurs fois d'orientation. Il se prépare cette année pour valider au moins un module (niveau 2ème année de 1er cycle).</description>
+	</étudiant>
+</liste>

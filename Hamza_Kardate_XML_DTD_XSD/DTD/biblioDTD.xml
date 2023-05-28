@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE biblio [
+<!ELEMENT biblio (livre+)>
+<!ELEMENT livre (titre,auteur+,éditeur,date-édition,nombre-de-pages,résumé+,image)>
+<!ELEMENT titre (#PCDATA)>
+<!ELEMENT auteur (#PCDATA)>
+<!ELEMENT éditeur (#PCDATA)>
+<!ELEMENT date-édition (#PCDATA)>
+<!ELEMENT nombre-de-pages (#PCDATA)>
+<!ELEMENT résumé (#PCDATA)>
+<!ELEMENT image EMPTY >
+
+<!ATTLIST livre code CDATA #REQUIRED langue CDATA #REQUIRED>
+<!ATTLIST résumé langue CDATA #REQUIRED >
+<!ATTLIST image hauteur CDATA #REQUIRED largeur CDATA #REQUIRED source CDATA #REQUIRED>
+]>
+<biblio>
+<!--1er livre -->
+<livre code="L001" langue="FR">
+<titre>XML pour le World Wide Web</titre>
+<auteur>Elizabeth Castro</auteur>
+<éditeur>Peachpit</éditeur>
+<date-édition>2001</date-édition>
+<nombre-de-pages>244</nombre-de-pages>
+<résumé langue="FR">
+Ce livre fournit des explications claires et concises, en
+utilisant une approche progressive. Il utilise de
+nombreuses captures d'écran pour vous aider à apprendre
+vite et bien. Ainsi vous pouvez créer facilement des
+applications Web en XML.
+</résumé>
+<résumé langue="EN">
+This book allows you to learn XML technologies in a
+simple way.
+</résumé>
+<image hauteur="100" largeur="70" source="images/livre1.jpg"></image>
+</livre>
+<!--2ème livre -->
+<livre code="L002" langue="EN">
+<titre>Dynamic HTML</titre>
+<auteur>Bruce Campbell</auteur>
+<auteur>Rick Darnell</auteur>
+<éditeur>S&amp;S Macmillan</éditeur>
+<date-édition>1998</date-édition>
+<nombre-de-pages>503</nombre-de-pages>
+<résumé langue="FR">
+Ce livre vous donne les clés de la création de pages
+web interactives et dynamiques. Vous abordez tout
+d'abord les concept fondamentaux de ce langage, puis
+approfondriez des sujets avancés...
+</résumé>
+<résumé langue="EN">
+You find in this book the most basic notions that you
+need to create interactive and dynamic web pages...
+</résumé>
+<image hauteur="100" largeur="70" source="images/livre2.jpg"></image>
+</livre>
+</biblio>

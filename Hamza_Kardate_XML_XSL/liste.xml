@@ -1,0 +1,32 @@
+<?xml version ="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="liste.xsl" ?>
+
+<liste>
+
+	<étudiant  code="E1">
+		<nom>Moujtahid Moujidd</nom>
+		<moyenne>18.91</moyenne>
+	</étudiant>
+
+	<étudiant code="E2">
+		<nom>Kaddouri Kaddour</nom>
+		<tél>070333333</tél>
+		<moyenne>15.90</moyenne>
+	</étudiant>
+
+	<étudiant code="E3">
+		<nom>Jallouli Jalloul</nom>
+		<tél>035000002</tél>
+		<tél>067000002</tél>
+		<moyenne>13.50</moyenne>
+	</étudiant>
+
+	<étudiant code="E4">
+		<nom>Kaslani Kassoul</nom>
+		<tél>035444444</tél>
+		<tél>063444444</tél>
+		<tél>067444444</tél>
+		<moyenne>3.50</moyenne>
+	</étudiant>
+
+</liste>

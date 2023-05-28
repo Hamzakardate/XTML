@@ -1,0 +1,104 @@
+<?xml version ="1.0"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<!--déclaration de l'élément "age" (globalement), on l'utilise plus tard dans le type complexe de l'élément "étudiant" avec l'attribut "ref" -->
+
+<xsd:element name ="age">
+	<xsd:simpleType>
+		<xsd:restriction base="xsd:integer">
+			<xsd:minInclusive value ="20" />
+			<xsd:maxInclusive value ="40" />
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:element>
+
+<!--déclaration de l'élément "tél" (globalement), on l'utilise plus tard dans le type complexe de l'élément "étudiant" avec l'attribut "ref" -->
+
+
+<xsd:element name = "tél">
+	<xsd:complexType>
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name ="type" default ="portable">
+					<xsd:simpleType >
+						<xsd:restriction base="xsd:string" >
+							<xsd:pattern value ="fixe|portable" />
+						</xsd:restriction>	
+					</xsd:simpleType>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>	
+	</xsd:complexType>
+</xsd:element>
+
+<!--déclaration de l'élément "photo" (globalement), on l'utilise plus tard dans le type complexe de l'élément "étudiant" avec l'attribut "ref" -->
+
+
+<xsd:element name ="photo">
+	<xsd:complexType>
+		<xsd:attribute name ="source" type ="xsd:string" use ="required" />
+		<xsd:attribute name = "hauteur" type ="xsd:string" use ="optional" />
+		<xsd:attribute name = "largeur" type ="xsd:string" use ="optional" />	
+	</xsd:complexType>
+</xsd:element>
+
+<!--déclaration de l'élément "CV" (globalement), on l'utilise plus tard dans le type complexe de l'élément "étudiant" avec l'attribut "ref" -->
+
+
+<xsd:element name ="CV">
+	<xsd:complexType>
+		<xsd:attribute name ="file" type ="xsd:string" use ="required" />
+	</xsd:complexType>
+</xsd:element>
+
+<!--déclaration de l'élément "description" (globalement), on l'utilise plus tard dans le type complexe de l'élément "étudiant" avec l'attribut "ref" -->
+
+<xsd:element name ="description">
+	<xsd:simpleType>
+		<xsd:restriction base = "xsd:string">
+			<xsd:maxLength value ="400" />
+		</xsd:restriction>	
+	</xsd:simpleType>
+</xsd:element>
+
+<!--déclaration de l'élément "étudiant" (globalement), on l'utilise plus tard dans le type complexe de l'élément "liste" avec l'attribut "ref" -->
+<!-- A l'intérieur de la définition du type de l'élément "étudiant", on fait référence aux élémentx créés précédément. On définit aussi des élément localement : nom, prénom, email -->
+
+
+<xsd:element name ="étudiant">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name ="nom" type ="xsd:string" />
+			<xsd:element name ="prénom" type ="xsd:string" />
+			<xsd:element ref ="age"  />
+			<xsd:element ref ="tél"  minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name ="email" type ="xsd:string" />
+			<xsd:element ref ="photo"  />
+			<xsd:choice minOccurs="0">
+				<xsd:element ref ="description" />
+				<xsd:element ref ="CV" />
+			</xsd:choice>		
+		</xsd:sequence>	
+		<xsd:attribute name="code" use="required" >
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:ID">
+					<xsd:pattern value="E\d{3}" />
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>		
+	</xsd:complexType>
+</xsd:element>
+
+<!--déclaration de l'élément liste, l'élément racine. On fait référence à l'élément étudiant ici -->
+
+<xsd:element name="liste">
+	<xsd:complexType>
+		<xsd:sequence maxOccurs="unbounded">
+			<xsd:element ref="étudiant" />
+		</xsd:sequence>
+		<xsd:attribute name="année" fixed="2007" />
+	</xsd:complexType>
+</xsd:element>
+
+</xsd:schema>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE emails [
+<!ELEMENT emails (email+)>
+<!ELEMENT email (head,body,attachement*)>
+<!ELEMENT head (date,from,to,copy*,subject?)>
+<!ELEMENT body (message+)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT copy (#PCDATA)>
+<!ELEMENT subject (#PCDATA)>
+<!ELEMENT attachement EMPTY >
+<!ENTITY FSDM "Faculté des sciences dhar el mahraz"> 
+<!ELEMENT message (#PCDATA)>
+
+<!ATTLIST copy type CDATA #IMPLIED >
+<!ATTLIST attachement file CDATA #REQUIRED >
+]>
+<emails>
+	<email>
+		<head>
+			<date>18/10/2006</date>
+			<from>Zinedine</from>
+			<to>Ahmed</to>
+			<copy>Toi</copy>
+			<copy type="BCC">Lui</copy>
+			<subject>Reunion</subject>
+		</head>
+		<body>
+			<message>Une réunion aura lieu Jeudi Inchaallah à 10h à la &FSDM;.</message>
+		</body>
+	</email>
+	
+	<email>
+		<head>
+			<date>12/12/2006</date>
+			<from>me</from>
+			<to>you</to>
+		</head>
+		<body>
+			<message>The journey was successful. Great photos were taken. An example is sent with this email. See you soon.</message>
+		</body>
+		<attachement file="photo1.jpg"/>
+		<attachement file="photo2.jpg"/>
+		<attachement file="photo3.jpg"/>
+		
+	</email>
+</emails>

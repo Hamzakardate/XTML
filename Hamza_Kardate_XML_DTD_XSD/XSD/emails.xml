@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE emails [
+<!ENTITY FSDM "Faculté des sciences dhar el mahraz"> 
+]>
+<emails xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="emails.xsd">
+	<email>
+		<head>
+			<date>18/10/2006</date>
+			<from>Zinedine</from>
+			<to>Ahmed</to>
+			<copy>Toi</copy>
+			<copy type="BCC">Lui</copy>
+			<subject>Reunion</subject>
+		</head>
+		<body>
+			<message>Une réunion aura lieu Jeudi Inchaallah à 10h à la &FSDM;.</message>
+		</body>
+	</email>
+	
+	<email>
+		<head>
+			<date>12/12/2006</date>
+			<from>me</from>
+			<to>you</to>
+		</head>
+		<body>
+			<message>The journey was successful. Great photos were taken. An example is sent with this email. See you soon.</message>
+		</body>
+		<attachement file="photo1.jpg"/>
+		<attachement file="photo2.jpg"/>
+		<attachement file="photo3.jpg"/>
+		
+	</email>
+</emails>

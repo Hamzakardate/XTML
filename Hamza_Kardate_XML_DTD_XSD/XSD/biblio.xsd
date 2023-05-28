@@ -1,0 +1,44 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="biblio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="livre" maxOccurs="unbounded" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>1er livre 2ème livre</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="titre"/>
+              <xs:element type="xs:string" name="auteur" maxOccurs="unbounded" minOccurs="0"/>
+              <xs:element type="xs:string" name="éditeur"/>
+              <xs:element type="xs:short" name="date-édition"/>
+              <xs:element type="xs:short" name="nombre-de-pages"/>
+              <xs:element name="résumé" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="langue" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="image">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:byte" name="hauteur" use="optional"/>
+                      <xs:attribute type="xs:byte" name="largeur" use="optional"/>
+                      <xs:attribute type="xs:string" name="source" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="code" use="optional"/>
+            <xs:attribute type="xs:string" name="langue" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

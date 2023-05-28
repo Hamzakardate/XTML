@@ -1,0 +1,13 @@
+<!ELEMENT catalogue (produit+)>
+<!ELEMENT livre (titre,auteur+,éditeur,date-édition,nombre-de-pages,résumé+,image)>
+<!ELEMENT titre (#PCDATA)>
+<!ELEMENT auteur (#PCDATA)>
+<!ELEMENT éditeur (#PCDATA)>
+<!ELEMENT date-édition (#PCDATA)>
+<!ELEMENT nombre-de-pages (#PCDATA)>
+<!ELEMENT résumé (#PCDATA)>
+<!ELEMENT image EMPTY >
+
+<!ATTLIST livre code CDATA #REQUIRED langue CDATA #REQUIRED>
+<!ATTLIST résumé langue CDATA #REQUIRED >
+<!ATTLIST image hauteur CDATA #REQUIRED largeur CDATA #REQUIRED source CDATA #REQUIRED>
